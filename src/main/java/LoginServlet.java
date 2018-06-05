@@ -9,6 +9,7 @@ import java.util.List;
 @WebServlet(name = "ViewAdsServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
         // interacts with models
         List<Ad> ads = DaoFactory.getAdsDao().all();
         request.setAttribute("ads", ads);

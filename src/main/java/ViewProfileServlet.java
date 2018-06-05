@@ -14,11 +14,14 @@ public class ViewProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String message = "";
         if (username.equals("admin") && password.equals("password")) {
             request.getRequestDispatcher("/profile.jsp").forward(request, response);
-
-
+        } else {
+            message = "Invalid Username or password. Please try again.";
+            request.setAttribute("message", message);
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
         }
     }
-
+}
 }
