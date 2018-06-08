@@ -1,5 +1,3 @@
-package com.codeup.adlister.models;
-
 public class User {
     private long id;
     private String username;
