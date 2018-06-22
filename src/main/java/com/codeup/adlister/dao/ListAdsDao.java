@@ -55,4 +55,8 @@ public class ListAdsDao implements Ads {
         ));
         return ads;
     }
+
+    @Override
+    public List<Ads> search(String searchQuery){return null;}
+
 }
